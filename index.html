@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LORD DIEGO // KING OF BUGS">
 <meta name="twitter:description" content="Elite Vulnerability Researcher | Bug Bounty Hunter | OSCP, OSWE">
-<meta name="twitter:site" content="@lorddiego_sec">
+<meta name="twitter:site" content="@lorddiego08">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -36,8 +36,10 @@
   "knowsAbout": ["Web Security", "Cloud Security", "AI Security", "Penetration Testing", "Bug Bounty"],
   "award": ["HackerOne Top Hunter", "Google Hall of Fame", "Microsoft Hall of Fame"],
   "sameAs": [
-    "https://twitter.com/lorddiego_sec",
-    "https://www.linkedin.com/in/lorddiego"
+    "https://t.me/Lorddiego10",
+    "https://instagram.com/lorddiego08",
+    "https://wa.me/254769332095",
+    "mailto:munyaodennis123@gmail.com"
   ]
 }
 </script>
@@ -503,6 +505,8 @@ section{position:relative;z-index:1;}
 .ci-ico svg{width:16px;height:16px;}
 .ci-key{font-family:var(--mono);font-size:.55rem;letter-spacing:3px;color:var(--grey2);margin-bottom:3px;}
 .ci-val{font-size:.92rem;color:var(--white);}
+.ci-val a{color:var(--white);text-decoration:none;transition:color .2s;}
+.ci-val a:hover{color:var(--gold);}
 .pgp-box{background:var(--panel2);border:1px solid rgba(255,215,0,.1);padding:16px 20px;display:flex;align-items:center;gap:14px;}
 .pgp-icon{font-size:1.5rem;opacity:.6;}
 .pgp-key-label{font-family:var(--mono);font-size:.55rem;letter-spacing:3px;color:var(--grey2);margin-bottom:4px;}
@@ -572,6 +576,329 @@ body.glitch-mode .hero-bg-img{filter:saturate(.35) brightness(.3) contrast(1.15)
 .ops-side{display:flex;flex-direction:column;gap:10px;}
 .ops-side-actions{display:flex;gap:8px;flex-wrap:wrap;}
 
+/* TOR PRIVATE LAB */
+#tor-lab{
+  min-height:100vh;
+  padding:120px 64px;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(0,255,65,.12) 0%,transparent 35%),
+    radial-gradient(circle at 14% 88%,rgba(0,255,65,.08) 0%,transparent 40%),
+    linear-gradient(180deg,#010307 0%,#04090d 100%);
+  border-top:1px solid rgba(0,255,65,.18);
+  border-bottom:1px solid rgba(0,255,65,.18);
+  overflow:hidden;
+}
+#tor-lab::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,65,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,65,.035) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+  z-index:0;
+}
+.tor-screen,.tor-card-grid,.tor-bottom{position:relative;z-index:2;}
+.tor-screen{
+  border:1px solid rgba(0,255,65,.28);
+  background:rgba(0,8,10,.78);
+  box-shadow:0 0 60px rgba(0,0,0,.65),0 0 28px rgba(0,255,65,.16),inset 0 0 36px rgba(0,255,65,.05);
+  padding:34px;
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:26px;
+}
+.tor-kicker{
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:4px;
+  color:rgba(105,255,71,.75);
+  margin-bottom:14px;
+}
+.tor-title{
+  font-family:var(--head);
+  font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:900;
+  letter-spacing:2px;
+  color:#85FF7A;
+  text-shadow:0 0 12px rgba(133,255,122,.4),0 0 35px rgba(0,255,65,.24);
+  line-height:1.08;
+  margin-bottom:16px;
+}
+.tor-sub{
+  font-family:var(--mono);
+  font-size:.84rem;
+  color:rgba(185,255,196,.78);
+  line-height:1.9;
+  margin-bottom:22px;
+}
+.tor-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.tor-btn{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:2px;
+  color:#ABFF95;
+  border:1px solid rgba(105,255,71,.48);
+  background:linear-gradient(135deg,rgba(0,255,65,.16),rgba(0,255,65,.05));
+  padding:12px 20px;
+  cursor:none;
+  transition:all .22s;
+  text-transform:uppercase;
+  box-shadow:0 0 16px rgba(0,255,65,.17),inset 0 0 18px rgba(0,255,65,.1);
+  animation:torGlow 2.4s ease-in-out infinite;
+}
+.tor-btn:hover{
+  color:#031006;
+  background:#85FF7A;
+  box-shadow:0 0 24px rgba(133,255,122,.48);
+}
+.tor-btn-ghost{
+  background:transparent;
+  color:#7BF4B1;
+  border-color:rgba(123,244,177,.48);
+  box-shadow:0 0 0 rgba(0,255,65,0);
+  animation-delay:.8s;
+}
+.tor-note{
+  margin-top:14px;
+  font-family:var(--mono);
+  font-size:.54rem;
+  letter-spacing:2px;
+  color:rgba(104,172,121,.84);
+}
+.tor-search-wrap{
+  margin-top:16px;
+  border:1px solid rgba(105,255,71,.23);
+  background:rgba(0,0,0,.32);
+  padding:12px;
+}
+.tor-search-label{
+  display:block;
+  font-family:var(--mono);
+  font-size:.56rem;
+  letter-spacing:2px;
+  color:#9FFF9A;
+  margin-bottom:8px;
+}
+.tor-search-form{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+}
+.tor-search-input{
+  min-width:0;
+  background:rgba(0,9,8,.9);
+  border:1px solid rgba(105,255,71,.34);
+  color:#C8FFD4;
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:1px;
+  padding:10px 12px;
+  outline:none;
+}
+.tor-search-input:focus{
+  border-color:#85FF7A;
+  box-shadow:0 0 0 1px rgba(133,255,122,.22),0 0 20px rgba(133,255,122,.2);
+}
+.tor-search-btn{
+  border:1px solid rgba(105,255,71,.52);
+  background:linear-gradient(135deg,rgba(0,255,65,.24),rgba(0,255,65,.08));
+  color:#AFFF99;
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 14px;
+  cursor:none;
+  transition:all .2s;
+  box-shadow:0 0 14px rgba(0,255,65,.17),inset 0 0 16px rgba(0,255,65,.08);
+}
+.tor-search-btn:hover{
+  color:#041107;
+  background:#85FF7A;
+  box-shadow:0 0 22px rgba(133,255,122,.38);
+}
+.tor-search-note{
+  margin-top:7px;
+  font-family:var(--mono);
+  font-size:.52rem;
+  letter-spacing:1px;
+  color:rgba(161,226,170,.66);
+}
+@keyframes torGlow{
+  0%,100%{box-shadow:0 0 14px rgba(0,255,65,.2),inset 0 0 12px rgba(0,255,65,.08);}
+  50%{box-shadow:0 0 24px rgba(133,255,122,.35),inset 0 0 18px rgba(133,255,122,.13);}
+}
+.tor-route{
+  border:1px solid rgba(105,255,71,.3);
+  background:rgba(3,12,12,.8);
+  padding:18px;
+}
+.tor-route-head{
+  font-family:var(--mono);
+  font-size:.56rem;
+  letter-spacing:3px;
+  color:#9FFF9A;
+  margin-bottom:18px;
+}
+.tor-route-track{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  align-items:center;
+  min-height:110px;
+}
+.tor-route-track::before{
+  content:'';
+  position:absolute;
+  left:8%;
+  right:8%;
+  top:50%;
+  height:2px;
+  background:linear-gradient(90deg,rgba(105,255,71,.2),rgba(133,255,122,.7),rgba(105,255,71,.2));
+  transform:translateY(-50%);
+}
+.tor-node{
+  position:relative;
+  z-index:2;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(105,255,71,.33);
+  background:rgba(0,0,0,.4);
+  color:#B9FFC4;
+  font-family:var(--mono);
+  font-size:.55rem;
+  letter-spacing:1px;
+  text-align:center;
+  padding:8px 6px;
+}
+.tor-packet{
+  position:absolute;
+  top:50%;
+  left:8%;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#A7FF82;
+  box-shadow:0 0 15px rgba(167,255,130,.9),0 0 36px rgba(105,255,71,.45);
+  transform:translate(-50%,-50%);
+  animation:torPacket 3.8s linear infinite;
+}
+@keyframes torPacket{
+  from{left:8%;}
+  to{left:92%;}
+}
+.tor-route-legend{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  font-family:var(--mono);
+  font-size:.5rem;
+  letter-spacing:1px;
+  color:rgba(185,255,196,.66);
+}
+.tor-route-legend span{display:inline-flex;align-items:center;gap:6px;}
+.tor-dot{width:7px;height:7px;border-radius:50%;background:#85FF7A;box-shadow:0 0 8px rgba(133,255,122,.75);}
+
+.tor-card-grid{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.tor-card{
+  border:1px solid rgba(105,255,71,.23);
+  background:rgba(0,9,8,.72);
+  padding:18px 18px 16px;
+}
+.tor-card h3{
+  font-family:var(--ox);
+  font-size:.95rem;
+  color:#A8FF93;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+.tor-card p{
+  font-family:var(--mono);
+  font-size:.68rem;
+  line-height:1.8;
+  color:rgba(185,255,196,.74);
+}
+.tor-mini{
+  margin-top:10px;
+  border:1px solid rgba(105,255,71,.18);
+  background:rgba(0,0,0,.4);
+  padding:10px;
+  font-family:var(--mono);
+  font-size:.56rem;
+  color:#7BFF8A;
+  letter-spacing:1px;
+}
+.tor-bottom{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.tor-block{
+  border:1px solid rgba(105,255,71,.22);
+  background:rgba(1,12,10,.74);
+  padding:20px;
+}
+.tor-block-title{
+  font-family:var(--ox);
+  font-size:1rem;
+  letter-spacing:1px;
+  color:#9BFF8B;
+  margin-bottom:8px;
+}
+.tor-block p{
+  font-family:var(--mono);
+  font-size:.67rem;
+  color:rgba(185,255,196,.76);
+  line-height:1.9;
+}
+.tor-list{
+  margin-top:10px;
+  padding-left:18px;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.tor-list li{
+  font-family:var(--mono);
+  font-size:.62rem;
+  color:rgba(185,255,196,.78);
+}
+.tor-tool-grid{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.tor-tool{
+  border:1px solid rgba(105,255,71,.28);
+  background:rgba(0,0,0,.35);
+  padding:10px 11px;
+  text-decoration:none;
+  transition:all .2s;
+}
+.tor-tool:hover{border-color:#85FF7A;box-shadow:0 0 16px rgba(133,255,122,.2);}
+.tor-tool-name{
+  display:block;
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:1px;
+  color:#B4FF9C;
+  margin-bottom:3px;
+}
+.tor-tool-meta{
+  display:block;
+  font-family:var(--mono);
+  font-size:.53rem;
+  color:rgba(185,255,196,.65);
+}
+
 /* FOOTER */
 footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--panel);}
 .footer-inner{display:grid;grid-template-columns:200px 1fr auto;gap:60px;align-items:start;}
@@ -585,6 +912,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
 .ft-sb{width:38px;height:38px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:none;transition:all .2s;}
 .ft-sb:hover{border-color:var(--gold-dim);background:var(--gold-glow);}
 .ft-sb svg{width:16px;height:16px;}
+.ft-sb{text-decoration:none;color:inherit;}
 .ft-copy{font-family:var(--mono);font-size:.55rem;letter-spacing:2px;color:#1a1a2a;padding-top:40px;border-top:1px solid var(--border2);text-align:center;}
 .ft-pgp{font-family:var(--mono);font-size:.55rem;letter-spacing:1px;color:#1e1e30;margin-top:6px;text-align:center;}
 
@@ -592,11 +920,14 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
 @media(max-width:1024px){
   nav{padding:14px 24px;}.nav-links{display:none;}
   #hero,.section-pad{padding:80px 24px;}
-  #about,#skills,#terminal-sec,#portfolio,#stats,#tools,#experience,#hof,#threatmap,#opsfeed,#testimonials,#blog,#contact,#threatmap{padding:80px 24px;}
+  #about,#skills,#terminal-sec,#portfolio,#stats,#tools,#experience,#hof,#threatmap,#opsfeed,#tor-lab,#testimonials,#blog,#contact,#threatmap{padding:80px 24px;}
   .about-grid,.terminal-layout,.exp-layout,.ct-grid{grid-template-columns:1fr;gap:40px;}
   .hero-right{display:none;}
   .stats-row{grid-template-columns:1fr 1fr;}
   .map-layout,.ops-layout{grid-template-columns:1fr;}
+  .tor-screen,.tor-card-grid,.tor-bottom{grid-template-columns:1fr;}
+  .tor-tool-grid{grid-template-columns:1fr;}
+  .tor-search-form{grid-template-columns:1fr;}
   .quickdeck-toggle{right:14px;bottom:14px;padding:10px 14px;font-size:.52rem;}
   .quickdeck-panel{left:16px;right:16px;width:auto;top:72px;bottom:22px;max-height:none;transform:none;}
   .quickdeck-panel.open{transform:none;}
@@ -662,6 +993,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
     <li><a href="#experience">Timeline</a></li>
     <li><a href="#threatmap">ThreatMap</a></li>
     <li><a href="#opsfeed">Ops Feed</a></li>
+    <li><a href="#tor-lab">Tor Lab</a></li>
     <li><a href="#blog">Write-ups</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1237,6 +1569,97 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
   </div>
 </section>
 
+<!-- TOR PRIVATE LAB -->
+<section id="tor-lab">
+  <div class="tor-screen sw">
+    <div class="tor-hero rev">
+      <div class="tor-kicker">// PRIVATE TRANSPORT LAYER //</div>
+      <h2 class="tor-title">Access via Tor for Maximum Privacy</h2>
+      <p class="tor-sub">Route research traffic through a multi-hop relay chain to reduce direct attribution and isolate testing identities. This lab view demonstrates safe operational privacy principles for defenders and researchers.</p>
+      <div class="tor-btns">
+        <button class="tor-btn" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">START PRIVATE ENGAGEMENT</button>
+        <button class="tor-btn tor-btn-ghost" type="button" onclick="document.getElementById('terminal-sec').scrollIntoView({behavior:'smooth'})">OPEN LAB TERMINAL</button>
+      </div>
+      <div class="tor-note">For legal, authorized security assessments and privacy education only.</div>
+      <div class="tor-search-wrap">
+        <label class="tor-search-label" for="tor-google-query">Google Search Gateway</label>
+        <form class="tor-search-form" id="tor-google-form" action="https://www.google.com/search" method="get" target="_blank">
+          <input class="tor-search-input" id="tor-google-query" name="q" type="text" required placeholder="Search security topic, CVE, tool, or guide...">
+          <input type="hidden" name="hl" value="en">
+          <button class="tor-search-btn" type="submit">Search Google</button>
+        </form>
+        <div class="tor-search-note">Results open in a new tab. Use responsibly and only for legal research.</div>
+      </div>
+    </div>
+    <div class="tor-route rev rd1">
+      <div class="tor-route-head">TOR ROUTING VISUALIZER</div>
+      <div class="tor-route-track">
+        <div class="tor-node">CLIENT<br>DEVICE</div>
+        <div class="tor-node">ENTRY<br>GUARD</div>
+        <div class="tor-node">MIDDLE<br>RELAY</div>
+        <div class="tor-node">EXIT<br>NODE</div>
+        <div class="tor-node">TARGET<br>SERVICE</div>
+        <div class="tor-packet"></div>
+      </div>
+      <div class="tor-route-legend">
+        <span><i class="tor-dot"></i>Each hop decrypts only one layer</span>
+        <span><i class="tor-dot"></i>No single relay sees full path + plaintext</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tor-card-grid sw">
+    <article class="tor-card rev">
+      <h3>1. Entry Guard Shield</h3>
+      <p>Your ISP sees Tor usage, not final destination. The guard knows your source but not the end target.</p>
+      <pre class="tor-mini">YOU -> GUARD -> [ENCRYPTED NEXT HOP]</pre>
+    </article>
+    <article class="tor-card rev rd1">
+      <h3>2. Relay Compartmentalization</h3>
+      <p>Middle relays pass encrypted traffic between nodes, making direct correlation harder without global visibility.</p>
+      <pre class="tor-mini">GUARD -> MIDDLE -> EXIT</pre>
+    </article>
+    <article class="tor-card rev rd2">
+      <h3>3. Exit Node Boundary</h3>
+      <p>Exit relays reach clearnet targets. Always pair Tor with HTTPS and avoid transmitting sensitive plaintext.</p>
+      <pre class="tor-mini">EXIT -> HTTPS TARGET</pre>
+    </article>
+  </div>
+
+  <div class="tor-bottom sw">
+    <div class="tor-block rev">
+      <h3 class="tor-block-title">Onion Services: Educational Overview</h3>
+      <p>Onion services (`.onion`) keep both client and server identities concealed inside the Tor network. They are useful for secure whistleblower portals, sensitive support channels, and censorship-resistant publishing.</p>
+      <ul class="tor-list">
+        <li>No public DNS exposure for service endpoints.</li>
+        <li>Mutual anonymity by design (client and host).</li>
+        <li>Best practice: segment hosting, keys, and admin access paths.</li>
+      </ul>
+    </div>
+    <div class="tor-block rev rd2">
+      <h3 class="tor-block-title">Safe Privacy Tools Directory</h3>
+      <div class="tor-tool-grid">
+        <a class="tor-tool" href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer">
+          <span class="tor-tool-name">Tor Browser</span>
+          <span class="tor-tool-meta">Official onion routing browser</span>
+        </a>
+        <a class="tor-tool" href="https://www.whonix.org/" target="_blank" rel="noopener noreferrer">
+          <span class="tor-tool-name">Whonix</span>
+          <span class="tor-tool-meta">Tor-by-default VM isolation</span>
+        </a>
+        <a class="tor-tool" href="https://www.tails.net/" target="_blank" rel="noopener noreferrer">
+          <span class="tor-tool-name">Tails</span>
+          <span class="tor-tool-meta">Amnesic live operating system</span>
+        </a>
+        <a class="tor-tool" href="https://www.privacyguides.org/" target="_blank" rel="noopener noreferrer">
+          <span class="tor-tool-name">Privacy Guides</span>
+          <span class="tor-tool-meta">Curated, transparent privacy advice</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BLOG -->
 <section id="blog">
   <div class="sh rev sw">
@@ -1285,19 +1708,19 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
       <div class="ci-list">
         <div class="ci-row">
           <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="ci-key">SECURE EMAIL</div><div class="ci-val">lord.diego@proton.me</div></div>
+          <div><div class="ci-key">EMAIL</div><div class="ci-val"><a href="mailto:munyaodennis123@gmail.com">munyaodennis123@gmail.com</a></div></div>
         </div>
         <div class="ci-row">
-          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></div>
-          <div><div class="ci-key">TWITTER / X</div><div class="ci-val">@lorddiego_sec</div></div>
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg></div>
+          <div><div class="ci-key">TELEGRAM</div><div class="ci-val"><a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">t.me/Lorddiego10</a></div></div>
         </div>
         <div class="ci-row">
-          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5"><path d="M8 2h8M12 2v4M6 8H3l-1 4M18 8h3l1 4M5 16H3M19 16h2M8 21h8M12 21v-5M6 12a6 6 0 0012 0V8a6 6 0 00-12 0v4z"/></svg></div>
-          <div><div class="ci-key">HACKERONE</div><div class="ci-val">hackerone.com/lorddiego</div></div>
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="18" cy="6" r="1.2"/></svg></div>
+          <div><div class="ci-key">INSTAGRAM</div><div class="ci-val"><a href="https://instagram.com/lorddiego08" target="_blank" rel="noopener noreferrer">@lorddiego08</a></div></div>
         </div>
         <div class="ci-row">
-          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
-          <div><div class="ci-key">LINKEDIN</div><div class="ci-val">linkedin.com/in/lorddiego</div></div>
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.1-5.1A8.5 8.5 0 1121 11.5z"/><path d="M9.4 8.7c.2-.5.5-.5.8-.5h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3 0 .5-.1.6l-.4.5c-.1.1-.2.2-.1.4.2.4.5.9.9 1.3.5.5 1 .8 1.4 1 .2.1.3 0 .4-.1l.5-.5c.2-.2.4-.3.6-.2l1.4.6c.2.1.3.3.2.6l-.2.9c-.1.4-.4.6-.7.6h-.5c-1.2-.1-2.4-.8-3.7-2.1-1.2-1.2-2-2.4-2.1-3.5 0-.2 0-.5.2-.7z"/></svg></div>
+          <div><div class="ci-key">WHATSAPP</div><div class="ci-val"><a href="https://wa.me/254769332095" target="_blank" rel="noopener noreferrer">+254 769 332 095</a></div></div>
         </div>
       </div>
       <div class="pgp-box">
@@ -1311,12 +1734,12 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
     <div class="rev rd2">
       <div class="cf">
         <div class="cf-row">
-          <div class="cf-grp"><label class="cf-lbl">Name</label><input class="cf-inp" placeholder="your_name" type="text"></div>
-          <div class="cf-grp"><label class="cf-lbl">Company</label><input class="cf-inp" placeholder="org_or_company" type="text"></div>
+          <div class="cf-grp"><label class="cf-lbl">Name</label><input class="cf-inp" id="cf-name" placeholder="your_name" type="text"></div>
+          <div class="cf-grp"><label class="cf-lbl">Company</label><input class="cf-inp" id="cf-company" placeholder="org_or_company" type="text"></div>
         </div>
-        <div class="cf-grp"><label class="cf-lbl">Email</label><input class="cf-inp" placeholder="your@email.com" type="email"></div>
+        <div class="cf-grp"><label class="cf-lbl">Email</label><input class="cf-inp" id="cf-email" placeholder="your@email.com" type="email"></div>
         <div class="cf-grp"><label class="cf-lbl">Engagement Type</label>
-          <select class="cf-sel">
+          <select class="cf-sel" id="cf-engagement">
             <option>Penetration Testing</option>
             <option>Bug Bounty Collaboration</option>
             <option>Security Consultation</option>
@@ -1326,15 +1749,15 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
             <option>Training &amp; Education</option>
           </select>
         </div>
-        <div class="cf-grp"><label class="cf-lbl">Message</label><textarea class="cf-ta" placeholder="Describe your security challenge or target scope..."></textarea></div>
+        <div class="cf-grp"><label class="cf-lbl">Message</label><textarea class="cf-ta" id="cf-message" placeholder="Describe your security challenge or target scope..."></textarea></div>
         <div>
-          <button class="cf-submit" id="cf-submit-btn">
+          <button class="cf-submit" id="cf-submit-btn" type="button">
             <span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              SEND ENCRYPTED MESSAGE
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+              SEND TO WHATSAPP
             </span>
           </button>
-          <div class="encrypt-notice">All messages encrypted end-to-end via PGP</div>
+          <div class="encrypt-notice">Form submission opens a WhatsApp chat with your message prefilled.</div>
         </div>
       </div>
     </div>
@@ -1359,6 +1782,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
       <div class="ft-nav-col">
         <h4>RESEARCH</h4>
         <a href="#blog">Write-ups</a>
+        <a href="#tor-lab">Tor Private Lab</a>
         <a href="#opsfeed">Ops Feed</a>
         <a href="#tools">Arsenal</a>
         <a href="#hof">Hall of Fame</a>
@@ -1366,18 +1790,26 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
       </div>
       <div class="ft-nav-col">
         <h4>CONTACT</h4>
-        <a href="#">ProtonMail</a>
-        <a href="#">HackerOne</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter / X</a>
+        <a href="mailto:munyaodennis123@gmail.com">Email</a>
+        <a href="https://wa.me/254769332095" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://instagram.com/lorddiego08" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
     <div>
       <div class="ft-social">
-        <div class="ft-sb"><svg viewBox="0 0 24 24" fill="#555"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
-        <div class="ft-sb"><svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
-        <div class="ft-sb"><svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
-        <div class="ft-sb" style="font-size:.7rem;color:#555;font-family:var(--mono)">H1</div>
+        <a class="ft-sb" href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+        </a>
+        <a class="ft-sb" href="https://instagram.com/lorddiego08" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="18" cy="6" r="1.2"/></svg>
+        </a>
+        <a class="ft-sb" href="https://wa.me/254769332095" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-12.7 7.4L3 20l1.1-5.1A8.5 8.5 0 1121 11.5z"/><path d="M9.4 8.7c.2-.5.5-.5.8-.5h.5c.2 0 .5 0 .6.4l.6 1.5c.1.3 0 .5-.1.6l-.4.5c-.1.1-.2.2-.1.4.2.4.5.9.9 1.3.5.5 1 .8 1.4 1 .2.1.3 0 .4-.1l.5-.5c.2-.2.4-.3.6-.2l1.4.6c.2.1.3.3.2.6l-.2.9c-.1.4-.4.6-.7.6h-.5c-1.2-.1-2.4-.8-3.7-2.1-1.2-1.2-2-2.4-2.1-3.5 0-.2 0-.5.2-.7z"/></svg>
+        </a>
+        <a class="ft-sb" href="mailto:munyaodennis123@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
+        </a>
       </div>
       <div style="font-family:var(--mono);font-size:.55rem;letter-spacing:2px;color:#1a1a2a;line-height:1.8">
         Available for engagements.<br>Response within 24 hours.
@@ -1791,12 +2223,12 @@ const staticCommandOutput = {
     '<span class="t-hi">  [+] 8 more — CLASSIFIED</span>',
   ],
   contact: [
-    '<span class="t-hi">[*] ENCRYPTED CONTACT CHANNELS:</span>',
-    '<span class="t-out">  📧 lord.diego@proton.me</span>',
-    '<span class="t-out">  🐦 @lorddiego_sec</span>',
-    '<span class="t-out">  🐛 hackerone.com/lorddiego</span>',
-    '<span class="t-out">  🔗 linkedin.com/in/lorddiego</span>',
-    '<span class="t-cyan">  🔐 PGP: A3F2 9C1E 84DA 7301 F92B</span>',
+    '<span class="t-hi">[*] CONTACT CHANNELS:</span>',
+    '<span class="t-out">  📧 munyaodennis123@gmail.com</span>',
+    '<span class="t-out">  💬 WhatsApp: +254 769 332 095</span>',
+    '<span class="t-out">  ✈ Telegram: t.me/Lorddiego10</span>',
+    '<span class="t-out">  📸 Instagram: @lorddiego08</span>',
+    '<span class="t-cyan">  // submit form to open WhatsApp with prefilled message</span>',
   ],
   certs: [
     '<span class="t-hi">[*] CERTIFICATIONS LOADED:</span>',
@@ -1902,6 +2334,8 @@ function executeCommand(rawInput, options = { echo: true }) {
       exploits: 'portfolio',
       threatmap: 'threatmap',
       ops: 'opsfeed',
+      tor: 'tor-lab',
+      torlab: 'tor-lab',
       blog: 'blog',
       contact: 'contact',
     };
@@ -2006,6 +2440,7 @@ if (qdToggle && qdPanel && qdSearch && qdList) {
     { label: 'Goto: Terminal', hint: '#terminal-sec', tags: 'goto terminal shell', run: () => scrollToSection('terminal-sec') },
     { label: 'Goto: ThreatMap', hint: '#threatmap', tags: 'goto map', run: () => scrollToSection('threatmap') },
     { label: 'Goto: Ops Feed', hint: '#opsfeed', tags: 'goto ops feed', run: () => scrollToSection('opsfeed') },
+    { label: 'Goto: Tor Private Lab', hint: '#tor-lab', tags: 'tor privacy onion', run: () => scrollToSection('tor-lab') },
     { label: 'Goto: Contact', hint: '#contact', tags: 'goto message', run: () => scrollToSection('contact') },
     { label: 'Run: whoami', hint: 'terminal command', tags: 'identity intro', run: () => executeCommand('whoami') },
     { label: 'Run: help', hint: 'terminal command', tags: 'commands docs', run: () => executeCommand('help') },
@@ -2159,39 +2594,56 @@ setInterval(() => {
 // ===== CONTACT FORM =====
 const submitBtn = document.getElementById('cf-submit-btn');
 const encryptNotice = document.querySelector('.encrypt-notice');
+const cfName = document.getElementById('cf-name');
+const cfCompany = document.getElementById('cf-company');
+const cfEmail = document.getElementById('cf-email');
+const cfEngagement = document.getElementById('cf-engagement');
+const cfMessage = document.getElementById('cf-message');
+const whatsappNumber = '254769332095';
 let isSending = false;
 if (submitBtn && encryptNotice) {
   submitBtn.addEventListener('click', function () {
     if (isSending) return;
     isSending = true;
-    const baseHtml = this.innerHTML;
-    const phases = ['GENERATING SESSION KEY...', 'ENCRYPTING PAYLOAD...', 'ROUTING VIA SECURE RELAY...'];
+    const name = cfName ? cfName.value.trim() : '';
+    const company = cfCompany ? cfCompany.value.trim() : '';
+    const email = cfEmail ? cfEmail.value.trim() : '';
+    const engagement = cfEngagement ? cfEngagement.value.trim() : '';
+    const message = cfMessage ? cfMessage.value.trim() : '';
+    const payload = [
+      'Hello Lord Diego,',
+      '',
+      'New inquiry from your website form:',
+      `Name: ${name || 'N/A'}`,
+      `Company: ${company || 'N/A'}`,
+      `Email: ${email || 'N/A'}`,
+      `Engagement: ${engagement || 'N/A'}`,
+      '',
+      'Message:',
+      message || 'N/A',
+    ].join('\n');
+    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(payload)}`;
     this.style.borderColor = 'var(--cyan)';
     this.style.color = 'var(--cyan)';
-    phases.forEach((phase, idx) => {
-      setTimeout(() => {
-        this.innerHTML = `<span>${phase}</span>`;
-        encryptNotice.textContent = `Status: ${phase.toLowerCase()}`;
-      }, idx * 650);
-    });
+    encryptNotice.textContent = 'Opening WhatsApp...';
+    const popup = window.open(waUrl, '_blank');
+    if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+      window.location.href = waUrl;
+      return;
+    }
+    this.style.borderColor = 'var(--green)';
+    this.style.color = 'var(--green)';
+    encryptNotice.classList.add('ok');
+    encryptNotice.textContent = 'WhatsApp chat opened with your prefilled message.';
     setTimeout(() => {
-      this.innerHTML = '<span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> MESSAGE ENCRYPTED & SENT</span>';
-      this.style.borderColor = 'var(--green)';
-      this.style.color = 'var(--green)';
-      encryptNotice.classList.add('ok');
-      encryptNotice.textContent = 'Transmission complete. Operator will respond in <24h.';
-    }, phases.length * 650 + 180);
-    setTimeout(() => {
-      this.innerHTML = baseHtml;
       this.style.borderColor = 'var(--gold)';
       this.style.color = 'var(--gold)';
       encryptNotice.classList.remove('ok');
-      encryptNotice.textContent = 'All messages encrypted end-to-end via PGP';
+      encryptNotice.textContent = 'Form submission opens a WhatsApp chat with your message prefilled.';
       isSending = false;
-    }, phases.length * 650 + 4200);
+    }, 2200);
   });
 }
 </script>
 </body>
 </html>
-
