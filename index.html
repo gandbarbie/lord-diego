@@ -2628,6 +2628,48 @@ async function ensureMusicPlayback() {
     return false;
   }
 }
+
+// Mobile detection and auto-play
+function isMobileView() {
+  return window.matchMedia('(max-width: 768px)').matches || 
+         window.matchMedia('(max-device-width: 768px)').matches ||
+         'ontouchstart' in window ||
+         navigator.maxTouchPoints > 0;
+}
+
+let autoPlayAttempted = false;
+
+function tryAutoPlay() {
+  if (autoPlayAttempted || musicState.started || musicState.missing) return;
+  
+  autoPlayAttempted = true;
+  // Try to autoplay - works on most desktop browsers
+  ensureMusicPlayback().then(success => {
+    if (success) {
+      renderMusicState();
+    }
+  });
+}
+
+// Auto-play when page loads
+setTimeout(tryAutoPlay, 1000);
+
+// Also try on visibility change (tab switches)
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    tryAutoPlay();
+  }
+});
+
+// Try on user interaction as fallback
+const unlockPlayback = () => {
+  if (musicState.started || musicState.missing) return;
+  ensureMusicPlayback().then(renderMusicState);
+};
+['pointerdown', 'keydown', 'touchstart'].forEach(evt => {
+  document.addEventListener(evt, unlockPlayback, { once: true });
+});
+
 if (musicBtn && bgDrillAudio) {
   bgDrillAudio.preload = 'auto';
   bgDrillAudio.load();
