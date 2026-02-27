@@ -549,6 +549,10 @@ section{position:relative;z-index:1;}
 /* COMMAND DECK */
 .quickdeck-toggle{position:fixed;right:24px;bottom:24px;z-index:7000;background:rgba(6,6,16,.92);border:1px solid rgba(255,215,0,.35);color:var(--gold);font-family:var(--mono);font-size:.56rem;letter-spacing:3px;padding:12px 16px;cursor:none;transition:all .2s;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);}
 .quickdeck-toggle:hover{border-color:var(--gold);box-shadow:0 0 20px rgba(255,215,0,.2);background:rgba(10,10,26,.98);}
+.music-toggle{position:fixed;left:24px;bottom:24px;z-index:7000;background:rgba(6,6,16,.92);border:1px solid rgba(0,255,65,.35);color:var(--green2);font-family:var(--mono);font-size:.56rem;letter-spacing:2px;padding:12px 16px;cursor:none;transition:all .2s;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);}
+.music-toggle:hover{border-color:var(--green);box-shadow:0 0 20px rgba(0,255,65,.2);background:rgba(10,10,26,.98);}
+.music-toggle.muted{border-color:rgba(255,215,0,.35);color:var(--gold);}
+.music-toggle.offline{border-color:rgba(255,0,51,.35);color:var(--red);}
 .quickdeck-panel{position:fixed;left:50%;top:90px;transform:translateX(-50%) translateY(-10px);width:min(760px,92vw);max-height:78vh;background:rgba(6,6,16,.95);backdrop-filter:blur(20px);border:1px solid var(--border);z-index:8000;padding:20px;opacity:0;visibility:hidden;pointer-events:none;transition:all .25s;}
 .quickdeck-panel.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
 .qd-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;}
@@ -944,6 +948,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
   .tor-tool-grid{grid-template-columns:1fr;}
   .tor-search-form{grid-template-columns:1fr;}
   .quickdeck-toggle{right:14px;bottom:14px;padding:10px 14px;font-size:.52rem;}
+  .music-toggle{left:14px;bottom:14px;padding:10px 14px;font-size:.52rem;}
   .quickdeck-panel{left:16px;right:16px;width:auto;top:72px;bottom:22px;max-height:none;transform:none;}
   .quickdeck-panel.open{transform:none;}
   .footer-inner{grid-template-columns:1fr;}
@@ -959,6 +964,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
 <div id="cursor-ring"></div>
 <div id="cursor-cross"></div>
 <button class="quickdeck-toggle" id="quickdeck-toggle" type="button">CTRL+K COMMAND DECK</button>
+<button class="music-toggle" id="music-toggle" type="button" aria-label="Toggle background music" aria-pressed="false">MUSIC: TAP TO PLAY</button>
 <div class="quickdeck-panel" id="quickdeck-panel" aria-hidden="true">
   <div class="qd-top">
     <div class="qd-title">// QUICK COMMAND DECK</div>
@@ -968,6 +974,10 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
   <div class="qd-list" id="qd-list"></div>
   <div class="qd-hint">Use Ctrl/Cmd + K to toggle · ↑↓ to navigate · Enter to run</div>
 </div>
+<audio id="bg-drill-audio" preload="none" loop>
+  <!-- Active background drill track -->
+  <source src="./assets/audio/hotel-lobby-colors-show.mp3" type="audio/mpeg">
+</audio>
 
 <!-- BOOT SCREEN -->
 <div id="boot-screen">
@@ -2589,6 +2599,64 @@ if (qdToggle && qdPanel && qdSearch && qdList) {
     if (e.key === 'Escape' && qdPanel.classList.contains('open')) closeDeck();
   });
   renderDeck();
+}
+
+// ===== BACKGROUND AUDIO =====
+const musicBtn = document.getElementById('music-toggle');
+const bgDrillAudio = document.getElementById('bg-drill-audio');
+const musicState = { started: false, muted: false, missing: false };
+function renderMusicState() {
+  if (!musicBtn) return;
+  let label = 'MUSIC: TAP TO PLAY';
+  if (musicState.missing) label = 'MUSIC: ADD TRACK';
+  else if (musicState.started && musicState.muted) label = 'MUSIC: MUTED';
+  else if (musicState.started) label = 'MUSIC: ON';
+  musicBtn.textContent = label;
+  musicBtn.classList.toggle('muted', musicState.muted && !musicState.missing);
+  musicBtn.classList.toggle('offline', musicState.missing);
+  musicBtn.setAttribute('aria-pressed', String(musicState.started && !musicState.muted && !musicState.missing));
+}
+async function ensureMusicPlayback() {
+  if (!bgDrillAudio || musicState.missing) return false;
+  try {
+    bgDrillAudio.muted = musicState.muted;
+    await bgDrillAudio.play();
+    musicState.started = true;
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+if (musicBtn && bgDrillAudio) {
+  bgDrillAudio.volume = 0.35;
+  bindHoverRing(musicBtn);
+  bgDrillAudio.addEventListener('error', () => {
+    musicState.missing = true;
+    musicState.started = false;
+    renderMusicState();
+  });
+  const unlockPlayback = () => {
+    if (musicState.started || musicState.missing) return;
+    ensureMusicPlayback().then(renderMusicState);
+  };
+  ['pointerdown', 'keydown', 'touchstart'].forEach(evt => {
+    document.addEventListener(evt, unlockPlayback, { once: true });
+  });
+  musicBtn.addEventListener('click', async () => {
+    if (musicState.missing) return;
+    if (!musicState.started) {
+      const started = await ensureMusicPlayback();
+      if (!started) return;
+      musicState.muted = false;
+      bgDrillAudio.muted = false;
+      renderMusicState();
+      return;
+    }
+    musicState.muted = !musicState.muted;
+    bgDrillAudio.muted = musicState.muted;
+    renderMusicState();
+  });
+  renderMusicState();
 }
 
 // UPTIME
