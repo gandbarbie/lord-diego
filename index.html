@@ -2666,9 +2666,11 @@ const whatsappNumber = '254769332095';
 const defaultNotice = 'WhatsApp opens with a prefilled service request message.';
 function buildWhatsAppServiceMessage(selectedService, details = {}) {
   const serviceLabel = (selectedService || 'this service').toLowerCase();
-  const introName = (details.name || 'so and so').trim() || 'so and so';
+  const introName = (details.name || '').trim();
   const lines = [`Hello 👋 lord diego ,how are you ? I am interested on purchasing ${serviceLabel}.`];
-  lines.push('', `Name: ${introName}`);
+  if (introName) {
+    lines.push('', `Name: ${introName}`);
+  }
   lines.push(`Company: ${(details.company || 'N/A').trim() || 'N/A'}`);
   lines.push(`Email: ${(details.email || 'N/A').trim() || 'N/A'}`);
   if ((details.message || '').trim()) {
