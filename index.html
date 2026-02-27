@@ -36,6 +36,7 @@
   "knowsAbout": ["Web Security", "Cloud Security", "AI Security", "Penetration Testing", "Bug Bounty"],
   "award": ["HackerOne Top Hunter", "Google Hall of Fame", "Microsoft Hall of Fame"],
   "sameAs": [
+    "https://t.me/+Jgp_WJ62UldlMzNk",
     "https://t.me/Lorddiego10",
     "https://instagram.com/lorddiego08",
     "https://wa.me/254769332095",
@@ -347,9 +348,9 @@ section{position:relative;z-index:1;}
 /* ASCII BANNER */
 .ascii-banner{font-family:var(--mono);font-size:.45rem;line-height:1.3;color:rgba(0,255,65,.25);letter-spacing:0;margin-bottom:10px;white-space:pre;}
 
-/* PORTFOLIO */
+/* PORTFOLIO / SERVICES */
 #portfolio{padding:120px 64px;}
-.port-filter{display:flex;gap:8px;justify-content:center;margin-bottom:48px;}
+.port-filter{display:flex;gap:8px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;}
 .pf-btn{font-family:var(--mono);font-size:.6rem;letter-spacing:2px;padding:8px 20px;background:transparent;border:1px solid var(--border2);color:var(--grey2);cursor:none;transition:all .2s;}
 .pf-btn.active,.pf-btn:hover{border-color:var(--gold-dim);color:var(--gold);background:var(--gold-glow);}
 .port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:1px;background:var(--border2);}
@@ -363,6 +364,9 @@ section{position:relative;z-index:1;}
 .sev-crit{color:#FF1744;border-color:rgba(255,23,68,.4);background:rgba(255,23,68,.08);}
 .sev-high{color:#FF6D00;border-color:rgba(255,109,0,.4);background:rgba(255,109,0,.06);}
 .sev-med{color:var(--gold);border-color:rgba(255,215,0,.3);background:var(--gold-glow);}
+.sev-service{color:var(--green);border-color:rgba(0,255,65,.35);background:rgba(0,255,65,.08);}
+.sev-access{color:var(--gold);border-color:rgba(255,215,0,.32);background:var(--gold-glow);}
+.sev-train{color:var(--cyan);border-color:rgba(0,229,255,.35);background:rgba(0,229,255,.08);}
 .case-id{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:.55rem;color:var(--grey);letter-spacing:2px;}
 .case-body{padding:22px;}
 .case-title{font-family:var(--ox);font-size:1rem;font-weight:700;letter-spacing:1px;color:var(--white);margin-bottom:10px;display:flex;align-items:flex-start;gap:8px;}
@@ -373,6 +377,9 @@ section{position:relative;z-index:1;}
 .case-footer{padding:12px 22px;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.58rem;color:var(--grey);}
 .case-bounty{color:var(--gold);font-size:.72rem;display:flex;align-items:center;gap:6px;}
 .case-bounty::before{content:'💰';font-size:.7rem;}
+.case-price{color:var(--gold);font-size:.72rem;letter-spacing:1px;}
+.case-wa-btn{font-family:var(--mono);font-size:.53rem;letter-spacing:2px;padding:7px 12px;border:1px solid rgba(0,255,65,.35);color:var(--green2);background:transparent;cursor:none;transition:all .2s;text-transform:uppercase;}
+.case-wa-btn:hover{border-color:var(--green);color:var(--green);box-shadow:0 0 14px rgba(0,255,65,.15);}
 .case-cvss{display:inline-flex;align-items:center;gap:4px;}
 .cvss-bar{width:40px;height:3px;background:rgba(255,255,255,.05);}
 .cvss-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));}
@@ -498,6 +505,14 @@ section{position:relative;z-index:1;}
 .ct-h{font-family:var(--ox);font-size:2.2rem;font-weight:800;letter-spacing:2px;margin-bottom:20px;line-height:1.1;}
 .ct-h span{color:var(--gold);}
 .ct-p{font-size:.95rem;color:rgba(150,150,170,.6);line-height:1.9;margin-bottom:36px;}
+.svc-box{background:var(--panel2);border:1px solid var(--border);padding:18px 20px;margin-bottom:24px;}
+.svc-head{font-family:var(--mono);font-size:.58rem;letter-spacing:4px;color:var(--gold-dim);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.svc-head::before{content:'//';color:var(--red);}
+.svc-list{display:flex;flex-direction:column;gap:8px;}
+.svc-item{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;background:var(--panel3);border:1px solid var(--border2);padding:9px 11px;}
+.svc-num{font-family:var(--mono);font-size:.56rem;letter-spacing:2px;color:var(--gold-dim);}
+.svc-name{font-family:var(--mono);font-size:.66rem;letter-spacing:1px;color:var(--white);}
+.svc-rate{font-family:var(--mono);font-size:.54rem;letter-spacing:1px;color:rgba(180,180,200,.7);text-align:right;}
 .ci-list{display:flex;flex-direction:column;gap:1px;background:var(--border2);margin-bottom:24px;}
 .ci-row{background:var(--panel2);padding:16px 20px;display:flex;align-items:center;gap:16px;transition:background .2s;}
 .ci-row:hover{background:var(--panel3);}
@@ -988,7 +1003,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#portfolio">Exploits</a></li>
+    <li><a href="#portfolio">Services</a></li>
     <li><a href="#tools">Arsenal</a></li>
     <li><a href="#experience">Timeline</a></li>
     <li><a href="#threatmap">ThreatMap</a></li>
@@ -1033,7 +1048,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>VIEW EXPLOITS</span>
+        <span>VIEW SERVICES</span>
       </button>
       <button class="btn-secondary" onclick="document.getElementById('terminal-sec').scrollIntoView({behavior:'smooth'})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
@@ -1249,81 +1264,100 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
   </div>
 </section>
 
-<!-- ===== PORTFOLIO ===== -->
+<!-- ===== SERVICES ===== -->
 <section id="portfolio">
   <div class="sh rev sw">
-    <div class="st">// CLASSIFIED FILES</div>
-    <h2 class="sh2">Exploit <span class="ac">Portfolio</span></h2>
-    <p class="sh-sub">Documented, responsible, impactful.</p>
+    <div class="st">// SERVICE CATALOG</div>
+    <h2 class="sh2">Service <span class="ac">Showcase</span></h2>
+    <p class="sh-sub">Choose a service and message directly on WhatsApp.</p>
   </div>
   <div class="port-filter sw rev">
     <button class="pf-btn active" onclick="filterCards('all',this)">ALL</button>
-    <button class="pf-btn" onclick="filterCards('critical',this)">CRITICAL</button>
-    <button class="pf-btn" onclick="filterCards('web',this)">WEB</button>
-    <button class="pf-btn" onclick="filterCards('cloud',this)">CLOUD</button>
-    <button class="pf-btn" onclick="filterCards('ai',this)">AI/LLM</button>
+    <button class="pf-btn" onclick="filterCards('scripts',this)">SCRIPTS</button>
+    <button class="pf-btn" onclick="filterCards('access',this)">ACCESS</button>
+    <button class="pf-btn" onclick="filterCards('telecom',this)">TELECOM</button>
     <button class="pf-btn" onclick="filterCards('mobile',this)">MOBILE</button>
+    <button class="pf-btn" onclick="filterCards('training',this)">TRAINING</button>
   </div>
   <div class="port-grid sw" id="port-grid">
-    <div class="case-card rev" data-cats="critical web">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=600&q=80" alt="JWT"><div class="case-img-ov"></div><span class="case-sev sev-crit">CRITICAL</span><span class="case-id">CASE-001</span></div>
+    <div class="case-card rev" data-cats="scripts">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="Bug scripts service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-service">SERVICE</span><span class="case-id">SVC-001</span></div>
       <div class="case-body">
-        <div class="case-title">Authentication Bypass via JWT Algorithm Confusion</div>
-        <div class="case-desc">None→RS256 algorithm confusion on a Fortune 500 fintech API. Full admin takeover in under 2 hours. CVSS 9.8.</div>
-        <div class="case-tags"><span class="ctag">JWT</span><span class="ctag">AUTH BYPASS</span><span class="ctag">FINTECH</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:98%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:var(--red)">9.8</span></div>
+        <div class="case-title">Bug Scripts</div>
+        <div class="case-desc">Ready-to-use script package from the current catalog. Pricing is negotiable for bulk or repeat requests.</div>
+        <div class="case-tags"><span class="ctag">AUTOMATION</span><span class="ctag">SCRIPT KIT</span><span class="ctag">CATALOG</span></div>
       </div>
-      <div class="case-footer"><span>HackerOne · Private</span><span class="case-bounty">$12,500</span></div>
+      <div class="case-footer"><span class="case-price">KES 150 · Negotiable</span><button class="case-wa-btn" type="button" data-service="Bug Scripts">Message WhatsApp</button></div>
     </div>
-    <div class="case-card rev rd1" data-cats="critical cloud">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80" alt="Cloud"><div class="case-img-ov"></div><span class="case-sev sev-crit">CRITICAL</span><span class="case-id">CASE-002</span></div>
+
+    <div class="case-card rev rd1" data-cats="access">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80" alt="Panels service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-access">SERVICE</span><span class="case-id">SVC-002</span></div>
       <div class="case-body">
-        <div class="case-title">Blind SSRF → AWS IMDSv1 Credential Exfiltration</div>
-        <div class="case-desc">Chained blind SSRF + open redirect to leak AWS temporary credentials. Full S3 bucket compromise.</div>
-        <div class="case-tags"><span class="ctag">SSRF</span><span class="ctag">AWS</span><span class="ctag">CLOUD</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:93%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:var(--red)">9.3</span></div>
+        <div class="case-title">Panels</div>
+        <div class="case-desc">Panel setup and access support with pricing based on selected server requirements and delivery scope.</div>
+        <div class="case-tags"><span class="ctag">PANEL</span><span class="ctag">SERVER BASED</span><span class="ctag">CUSTOM</span></div>
       </div>
-      <div class="case-footer"><span>Bugcrowd · SaaS</span><span class="case-bounty">$8,750</span></div>
+      <div class="case-footer"><span class="case-price">Cost depends on server</span><button class="case-wa-btn" type="button" data-service="Panels">Message WhatsApp</button></div>
     </div>
-    <div class="case-card rev rd2" data-cats="web">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="XSS"><div class="case-img-ov"></div><span class="case-sev sev-high">HIGH</span><span class="case-id">CASE-003</span></div>
+
+    <div class="case-card rev rd2" data-cats="access">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt="Ban methods service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-access">SERVICE</span><span class="case-id">SVC-003</span></div>
       <div class="case-body">
-        <div class="case-title">Stored XSS → Admin Account Takeover Chain</div>
-        <div class="case-desc">Stored XSS in profile field + CSRF to steal admin session cookies. Full ATO in 3 steps, zero interaction.</div>
-        <div class="case-tags"><span class="ctag">XSS</span><span class="ctag">CSRF</span><span class="ctag">ATO</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:88%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:#FF6D00">8.8</span></div>
+        <div class="case-title">Ban Methods</div>
+        <div class="case-desc">Predefined method package from the active catalog, provided as a standalone service request.</div>
+        <div class="case-tags"><span class="ctag">METHODS</span><span class="ctag">PACKAGE</span><span class="ctag">DIRECT</span></div>
       </div>
-      <div class="case-footer"><span>Private VDP</span><span class="case-bounty">$5,000</span></div>
+      <div class="case-footer"><span class="case-price">$15</span><button class="case-wa-btn" type="button" data-service="Ban Methods">Message WhatsApp</button></div>
     </div>
-    <div class="case-card rev" data-cats="critical web">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" alt="SQLi"><div class="case-img-ov"></div><span class="case-sev sev-crit">CRITICAL</span><span class="case-id">CASE-004</span></div>
+
+    <div class="case-card rev" data-cats="scripts">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" alt="Ban scripts service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-service">SERVICE</span><span class="case-id">SVC-004</span></div>
       <div class="case-body">
-        <div class="case-title">SQL Injection in GraphQL Resolver → 2.1M Records</div>
-        <div class="case-desc">Unsanitized variables interpolated into raw SQL. Error-based dump of 2.1M user records including hashed credentials.</div>
-        <div class="case-tags"><span class="ctag">SQLi</span><span class="ctag">GraphQL</span><span class="ctag">DATABASE</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:91%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:var(--red)">9.1</span></div>
+        <div class="case-title">Ban Scripts</div>
+        <div class="case-desc">Script-based package listed in the catalog and delivered based on your requested scope.</div>
+        <div class="case-tags"><span class="ctag">SCRIPT</span><span class="ctag">PACKAGE</span><span class="ctag">ON REQUEST</span></div>
       </div>
-      <div class="case-footer"><span>Intigriti · Retail</span><span class="case-bounty">$7,200</span></div>
+      <div class="case-footer"><span class="case-price">On request</span><button class="case-wa-btn" type="button" data-service="Ban Scripts">Message WhatsApp</button></div>
     </div>
-    <div class="case-card rev rd1" data-cats="mobile">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile"><div class="case-img-ov"></div><span class="case-sev sev-high">HIGH</span><span class="case-id">CASE-005</span></div>
+
+    <div class="case-card rev rd1" data-cats="telecom">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Foreign numbers service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-service">SERVICE</span><span class="case-id">SVC-005</span></div>
       <div class="case-body">
-        <div class="case-title">Android Deep Link → Privileged WebView JS Injection</div>
-        <div class="case-desc">Unvalidated deep link in banking app triggered JS injection via privileged WebView affecting millions of users.</div>
-        <div class="case-tags"><span class="ctag">ANDROID</span><span class="ctag">DEEPLINK</span><span class="ctag">WEBVIEW</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:81%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:#FF6D00">8.1</span></div>
+        <div class="case-title">Foreign Numbers</div>
+        <div class="case-desc">International number options listed in the catalog, shared depending on current availability.</div>
+        <div class="case-tags"><span class="ctag">TELECOM</span><span class="ctag">INTERNATIONAL</span><span class="ctag">ON REQUEST</span></div>
       </div>
-      <div class="case-footer"><span>Private VDP · Banking</span><span class="case-bounty">$4,500</span></div>
+      <div class="case-footer"><span class="case-price">On request</span><button class="case-wa-btn" type="button" data-service="Foreign Numbers">Message WhatsApp</button></div>
     </div>
-    <div class="case-card rev rd2" data-cats="ai">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="LLM"><div class="case-img-ov"></div><span class="case-sev sev-med">MEDIUM</span><span class="case-id">CASE-006</span></div>
+
+    <div class="case-card rev rd2" data-cats="mobile">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80" alt="APK bugs service" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-service">SERVICE</span><span class="case-id">SVC-006</span></div>
       <div class="case-body">
-        <div class="case-title">LLM Indirect Prompt Injection → Data Exfiltration</div>
-        <div class="case-desc">Indirect prompt injection in AI chatbot hijacked system prompt, exfiltrating internal knowledge base to attacker-controlled server.</div>
-        <div class="case-tags"><span class="ctag">AI/LLM</span><span class="ctag">PROMPT INJECTION</span></div>
-        <div class="case-cvss"><span style="font-family:var(--mono);font-size:.55rem;color:var(--grey2)">CVSS:</span><div class="cvss-bar"><div class="cvss-fill" style="width:65%"></div></div><span style="font-family:var(--mono);font-size:.6rem;color:var(--gold)">6.5</span></div>
+        <div class="case-title">APK Bugs</div>
+        <div class="case-desc">APK-related service slot available from the catalog with details confirmed in chat.</div>
+        <div class="case-tags"><span class="ctag">APK</span><span class="ctag">MOBILE</span><span class="ctag">REQUEST</span></div>
       </div>
-      <div class="case-footer"><span>HackerOne · AI Co.</span><span class="case-bounty">$2,800</span></div>
+      <div class="case-footer"><span class="case-price">On request</span><button class="case-wa-btn" type="button" data-service="APK Bugs">Message WhatsApp</button></div>
+    </div>
+
+    <div class="case-card rev" data-cats="training">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&q=80" alt="Lessons on how to bug" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-train">TRAINING</span><span class="case-id">SVC-007</span></div>
+      <div class="case-body">
+        <div class="case-title">Lessons on How to Bug</div>
+        <div class="case-desc">Structured lesson sessions from beginner to intermediate level, based on the current service catalog.</div>
+        <div class="case-tags"><span class="ctag">LESSONS</span><span class="ctag">MENTORING</span><span class="ctag">TRAINING</span></div>
+      </div>
+      <div class="case-footer"><span class="case-price">Per lesson</span><button class="case-wa-btn" type="button" data-service="Lessons on How to Bug">Message WhatsApp</button></div>
+    </div>
+
+    <div class="case-card rev rd1" data-cats="training">
+      <div class="case-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Lessons on escaping bugs and bans" loading="lazy"><div class="case-img-ov"></div><span class="case-sev sev-train">TRAINING</span><span class="case-id">SVC-008</span></div>
+      <div class="case-body">
+        <div class="case-title">Lessons on Escaping Bugs &amp; Bans</div>
+        <div class="case-desc">Focused lesson series covering safe practice, response awareness, and prevention-oriented workflows.</div>
+        <div class="case-tags"><span class="ctag">ADVANCED</span><span class="ctag">LESSONS</span><span class="ctag">GUIDED</span></div>
+      </div>
+      <div class="case-footer"><span class="case-price">Per lesson</span><button class="case-wa-btn" type="button" data-service="Lessons on Escaping Bugs and Bans">Message WhatsApp</button></div>
     </div>
   </div>
 </section>
@@ -1705,6 +1739,19 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
       <div class="ct-left-label">SECURE CHANNEL</div>
       <h2 class="ct-h">Initiate <span>Contact</span></h2>
       <p class="ct-p">Ready to secure your systems, hunt critical vulnerabilities, or collaborate on cutting-edge security research? All communications treated with strict operational confidentiality.</p>
+      <div class="svc-box">
+        <div class="svc-head">SERVICE CATALOG</div>
+        <div class="svc-list">
+          <div class="svc-item"><span class="svc-num">01</span><span class="svc-name">Bug Scripts</span><span class="svc-rate">KES 150 · Negotiable</span></div>
+          <div class="svc-item"><span class="svc-num">02</span><span class="svc-name">Panels</span><span class="svc-rate">Depends on server</span></div>
+          <div class="svc-item"><span class="svc-num">03</span><span class="svc-name">Ban Methods</span><span class="svc-rate">$15</span></div>
+          <div class="svc-item"><span class="svc-num">04</span><span class="svc-name">Ban Scripts</span><span class="svc-rate">On request</span></div>
+          <div class="svc-item"><span class="svc-num">05</span><span class="svc-name">Foreign Numbers</span><span class="svc-rate">On request</span></div>
+          <div class="svc-item"><span class="svc-num">06</span><span class="svc-name">APK Bugs</span><span class="svc-rate">On request</span></div>
+          <div class="svc-item"><span class="svc-num">07</span><span class="svc-name">Lessons on How to Bug</span><span class="svc-rate">Per lesson</span></div>
+          <div class="svc-item"><span class="svc-num">08</span><span class="svc-name">Lessons on Escaping Bugs &amp; Bans</span><span class="svc-rate">Per lesson</span></div>
+        </div>
+      </div>
       <div class="ci-list">
         <div class="ci-row">
           <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -1712,7 +1759,11 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
         </div>
         <div class="ci-row">
           <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg></div>
-          <div><div class="ci-key">TELEGRAM</div><div class="ci-val"><a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">t.me/Lorddiego10</a></div></div>
+          <div><div class="ci-key">TELEGRAM GROUP (CATALOG)</div><div class="ci-val"><a href="https://t.me/+Jgp_WJ62UldlMzNk" target="_blank" rel="noopener noreferrer">t.me/+Jgp_WJ62UldlMzNk</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg></div>
+          <div><div class="ci-key">TELEGRAM (DIRECT DM)</div><div class="ci-val"><a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">t.me/Lorddiego10</a></div></div>
         </div>
         <div class="ci-row">
           <div class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="18" cy="6" r="1.2"/></svg></div>
@@ -1738,18 +1789,20 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
           <div class="cf-grp"><label class="cf-lbl">Company</label><input class="cf-inp" id="cf-company" placeholder="org_or_company" type="text"></div>
         </div>
         <div class="cf-grp"><label class="cf-lbl">Email</label><input class="cf-inp" id="cf-email" placeholder="your@email.com" type="email"></div>
-        <div class="cf-grp"><label class="cf-lbl">Engagement Type</label>
-          <select class="cf-sel" id="cf-engagement">
-            <option>Penetration Testing</option>
-            <option>Bug Bounty Collaboration</option>
-            <option>Security Consultation</option>
-            <option>AI Security Assessment</option>
-            <option>Red Team Exercise</option>
-            <option>Forensics / Incident Response</option>
-            <option>Training &amp; Education</option>
+        <div class="cf-grp"><label class="cf-lbl">Service Needed</label>
+          <select class="cf-sel" id="cf-service">
+            <option value="" selected disabled>Select service from catalog</option>
+            <option value="Bug Scripts">Bug Scripts (KES 150 · Negotiable)</option>
+            <option value="Panels">Panels (Cost depends on server)</option>
+            <option value="Ban Methods">Ban Methods ($15)</option>
+            <option value="Ban Scripts">Ban Scripts</option>
+            <option value="Foreign Numbers">Foreign Numbers</option>
+            <option value="APK Bugs">APK Bugs</option>
+            <option value="Lessons on How to Bug">Lessons on How to Bug</option>
+            <option value="Lessons on Escaping Bugs and Bans">Lessons on Escaping Bugs and Bans</option>
           </select>
         </div>
-        <div class="cf-grp"><label class="cf-lbl">Message</label><textarea class="cf-ta" id="cf-message" placeholder="Describe your security challenge or target scope..."></textarea></div>
+        <div class="cf-grp"><label class="cf-lbl">Message</label><textarea class="cf-ta" id="cf-message" placeholder="Any extra details about this service request..."></textarea></div>
         <div>
           <button class="cf-submit" id="cf-submit-btn" type="button">
             <span>
@@ -1757,7 +1810,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
               SEND TO WHATSAPP
             </span>
           </button>
-          <div class="encrypt-notice">Form submission opens a WhatsApp chat with your message prefilled.</div>
+          <div class="encrypt-notice">WhatsApp opens with a prefilled service request message.</div>
         </div>
       </div>
     </div>
@@ -1776,7 +1829,7 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
         <h4>NAVIGATE</h4>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#portfolio">Exploits</a>
+        <a href="#portfolio">Services</a>
         <a href="#experience">Timeline</a>
       </div>
       <div class="ft-nav-col">
@@ -1792,13 +1845,17 @@ footer{padding:56px 64px;border-top:1px solid var(--border);background:var(--pan
         <h4>CONTACT</h4>
         <a href="mailto:munyaodennis123@gmail.com">Email</a>
         <a href="https://wa.me/254769332095" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://t.me/+Jgp_WJ62UldlMzNk" target="_blank" rel="noopener noreferrer">Telegram Group (Catalog)</a>
+        <a href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer">Telegram (Direct DM)</a>
         <a href="https://instagram.com/lorddiego08" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
     <div>
       <div class="ft-social">
-        <a class="ft-sb" href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <a class="ft-sb" href="https://t.me/+Jgp_WJ62UldlMzNk" target="_blank" rel="noopener noreferrer" aria-label="Telegram Group (Catalog)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+        </a>
+        <a class="ft-sb" href="https://t.me/Lorddiego10" target="_blank" rel="noopener noreferrer" aria-label="Telegram Direct DM">
           <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
         </a>
         <a class="ft-sb" href="https://instagram.com/lorddiego08" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -2175,7 +2232,7 @@ const tout = document.getElementById('tout');
 const tinp = document.getElementById('tinp');
 const hist = [];
 let histIdx = -1;
-const commandList = ['help', 'whoami', 'skills', 'exploits', 'bounties', 'contact', 'certs', 'arsenal', 'hof', 'ls', 'pwd', 'date', 'uname', 'ifconfig', 'matrix', 'clear', 'scan', 'trace', 'goto', 'theme', 'missions', 'feed'];
+const commandList = ['help', 'whoami', 'skills', 'services', 'exploits', 'bounties', 'contact', 'certs', 'arsenal', 'hof', 'ls', 'pwd', 'date', 'uname', 'ifconfig', 'matrix', 'clear', 'scan', 'trace', 'goto', 'theme', 'missions', 'feed'];
 const staticCommandOutput = {
   whoami: [
     '<span class="t-hi">╔══════════════════════════════════════════╗</span>',
@@ -2197,13 +2254,16 @@ const staticCommandOutput = {
     '<span class="t-out">  ► Mobile App Testing      [███████░░░] 75%  ADVANCED</span>',
   ],
   exploits: [
-    '<span class="t-hi">[*] CLASSIFIED EXPLOIT DATABASE:</span>',
-    '<span class="t-err">  CASE-001: JWT Algorithm Confusion   CVSS 9.8  $12,500</span>',
-    '<span class="t-err">  CASE-002: SSRF → AWS Cred Leak      CVSS 9.3  $8,750</span>',
-    '<span class="t-err">  CASE-004: GraphQL SQLi → 2.1M rows  CVSS 9.1  $7,200</span>',
-    '<span class="t-cyan">  CASE-003: Stored XSS → Admin ATO   CVSS 8.8  $5,000</span>',
-    '<span class="t-cyan">  CASE-005: Android WebView Injection  CVSS 8.1  $4,500</span>',
-    '<span class="t-hi">  [+] 495 more cases. CLASSIFIED.</span>',
+    '<span class="t-hi">[*] SERVICE CATALOG:</span>',
+    '<span class="t-out">  SVC-001: Bug Scripts                     KES 150 (Negotiable)</span>',
+    '<span class="t-out">  SVC-002: Panels                          Cost depends on server</span>',
+    '<span class="t-out">  SVC-003: Ban Methods                     $15</span>',
+    '<span class="t-out">  SVC-004: Ban Scripts                     On request</span>',
+    '<span class="t-out">  SVC-005: Foreign Numbers                 On request</span>',
+    '<span class="t-out">  SVC-006: APK Bugs                        On request</span>',
+    '<span class="t-out">  SVC-007: Lessons on How to Bug           Per lesson</span>',
+    '<span class="t-out">  SVC-008: Lessons on Escaping Bugs/Bans   Per lesson</span>',
+    '<span class="t-cyan">  // use contact form or service cards to message on WhatsApp</span>',
   ],
   bounties: [
     '<span class="t-hi">[*] BUG BOUNTY FINANCIALS:</span>',
@@ -2226,7 +2286,9 @@ const staticCommandOutput = {
     '<span class="t-hi">[*] CONTACT CHANNELS:</span>',
     '<span class="t-out">  📧 munyaodennis123@gmail.com</span>',
     '<span class="t-out">  💬 WhatsApp: +254 769 332 095</span>',
-    '<span class="t-out">  ✈ Telegram: t.me/Lorddiego10</span>',
+    '<span class="t-out">  📣 Telegram Group (Catalog): t.me/+Jgp_WJ62UldlMzNk</span>',
+    '<span class="t-out">  ✈ Telegram Direct DM: t.me/Lorddiego10</span>',
+    '<span class="t-out">  📦 Services: Bug Scripts · Panels · Ban Methods · APK Bugs · Lessons</span>',
     '<span class="t-out">  📸 Instagram: @lorddiego08</span>',
     '<span class="t-cyan">  // submit form to open WhatsApp with prefilled message</span>',
   ],
@@ -2266,7 +2328,7 @@ function runLines(lines, cadence = 58) {
 function terminalHelp() {
   return [
     '<span class="t-hi">[*] AVAILABLE COMMANDS:</span>',
-    '<span class="t-out">  whoami · skills · exploits · bounties · contact · certs · arsenal · hof</span>',
+    '<span class="t-out">  whoami · skills · services · exploits · bounties · contact · certs · arsenal · hof</span>',
     '<span class="t-out">  scan &lt;target&gt; · trace &lt;ip&gt; · goto &lt;section&gt; · theme &lt;gold|red|green&gt;</span>',
     '<span class="t-out">  missions · feed &lt;pause|resume|clear|status&gt; · matrix · clear · ls · pwd · date</span>',
     '<span class="t-comment">  // Tab completion enabled · Ctrl/Cmd+K opens command deck</span>',
@@ -2385,7 +2447,8 @@ function executeCommand(rawInput, options = { echo: true }) {
     return;
   }
   if (cmd === 'help') { runLines(terminalHelp()); return; }
-  if (staticCommandOutput[cmd]) { runLines(staticCommandOutput[cmd]); return; }
+  const staticKey = cmd === 'services' ? 'exploits' : cmd;
+  if (staticCommandOutput[staticKey]) { runLines(staticCommandOutput[staticKey]); return; }
   const suggestion = commandList.filter(name => name.startsWith(cmd.slice(0, 2))).slice(0, 4);
   addLine(`<span class="t-err">bash: ${escapeHtml(cmd)}: command not found</span>`);
   if (suggestion.length) {
@@ -2597,9 +2660,38 @@ const encryptNotice = document.querySelector('.encrypt-notice');
 const cfName = document.getElementById('cf-name');
 const cfCompany = document.getElementById('cf-company');
 const cfEmail = document.getElementById('cf-email');
-const cfEngagement = document.getElementById('cf-engagement');
+const cfService = document.getElementById('cf-service');
 const cfMessage = document.getElementById('cf-message');
 const whatsappNumber = '254769332095';
+const defaultNotice = 'WhatsApp opens with a prefilled service request message.';
+function buildWhatsAppServiceMessage(selectedService, details = {}) {
+  const serviceLabel = (selectedService || 'this service').toLowerCase();
+  const introName = (details.name || 'so and so').trim() || 'so and so';
+  const lines = [`Hello 👋 lord diego ,how are you ? I am interested on purchasing ${serviceLabel}.`];
+  lines.push('', `Name: ${introName}`);
+  lines.push(`Company: ${(details.company || 'N/A').trim() || 'N/A'}`);
+  lines.push(`Email: ${(details.email || 'N/A').trim() || 'N/A'}`);
+  if ((details.message || '').trim()) {
+    lines.push('', 'More details:', details.message.trim());
+  }
+  return lines.join('\n');
+}
+function openWhatsAppMessage(prefilledText) {
+  const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(prefilledText)}`;
+  const popup = window.open(waUrl, '_blank');
+  if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+    window.location.href = waUrl;
+    return false;
+  }
+  return true;
+}
+document.querySelectorAll('.case-wa-btn[data-service]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const service = btn.dataset.service || 'this service';
+    const payload = buildWhatsAppServiceMessage(service);
+    openWhatsAppMessage(payload);
+  });
+});
 let isSending = false;
 if (submitBtn && encryptNotice) {
   submitBtn.addEventListener('click', function () {
@@ -2608,27 +2700,26 @@ if (submitBtn && encryptNotice) {
     const name = cfName ? cfName.value.trim() : '';
     const company = cfCompany ? cfCompany.value.trim() : '';
     const email = cfEmail ? cfEmail.value.trim() : '';
-    const engagement = cfEngagement ? cfEngagement.value.trim() : '';
+    const service = cfService ? cfService.value.trim() : '';
     const message = cfMessage ? cfMessage.value.trim() : '';
-    const payload = [
-      'Hello Lord Diego,',
-      '',
-      'New inquiry from your website form:',
-      `Name: ${name || 'N/A'}`,
-      `Company: ${company || 'N/A'}`,
-      `Email: ${email || 'N/A'}`,
-      `Engagement: ${engagement || 'N/A'}`,
-      '',
-      'Message:',
-      message || 'N/A',
-    ].join('\n');
-    const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(payload)}`;
+    if (!service) {
+      this.style.borderColor = 'var(--red)';
+      this.style.color = 'var(--red)';
+      encryptNotice.textContent = 'Select a service from the catalog before sending.';
+      setTimeout(() => {
+        this.style.borderColor = 'var(--gold)';
+        this.style.color = 'var(--gold)';
+        encryptNotice.textContent = defaultNotice;
+        isSending = false;
+      }, 1700);
+      return;
+    }
+    const payload = buildWhatsAppServiceMessage(service, { name, company, email, message });
     this.style.borderColor = 'var(--cyan)';
     this.style.color = 'var(--cyan)';
     encryptNotice.textContent = 'Opening WhatsApp...';
-    const popup = window.open(waUrl, '_blank');
-    if (!popup || popup.closed || typeof popup.closed === 'undefined') {
-      window.location.href = waUrl;
+    const openedInPopup = openWhatsAppMessage(payload);
+    if (!openedInPopup) {
       return;
     }
     this.style.borderColor = 'var(--green)';
@@ -2639,7 +2730,7 @@ if (submitBtn && encryptNotice) {
       this.style.borderColor = 'var(--gold)';
       this.style.color = 'var(--gold)';
       encryptNotice.classList.remove('ok');
-      encryptNotice.textContent = 'Form submission opens a WhatsApp chat with your message prefilled.';
+      encryptNotice.textContent = defaultNotice;
       isSending = false;
     }, 2200);
   });
